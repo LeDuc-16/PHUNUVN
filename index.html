@@ -29,11 +29,12 @@
             position: fixed;
             top: -10px;
             font-size: clamp(1.2em, 3vw, 2em);
-            opacity: 0.7;
-            animation: fall linear infinite;
+            opacity: 0.8;
+            animation: fall linear forwards;
             user-select: none;
             pointer-events: none;
-            z-index: 0;
+            z-index: 10;
+            will-change: transform, opacity;
         }
 
         @keyframes fall {
@@ -526,7 +527,7 @@
 
         <!-- Page 4: Hỗn đọn -->
         <div class="page page-4">
-            <h2>🎨 Cái Mớ Hỗn Đọn Trước Khi Làm 🎨</h2>
+            <h2>🎨 Cái Mớ Hỗn độn Trước Khi Làm 🎨</h2>
             <div class="image-container">
                 <img src="hondon.jpg" alt="Hỗn đọn">
             </div>
@@ -534,7 +535,7 @@
 
         <!-- Page 5: Thành quả -->
         <div class="page page-5">
-            <h2>✨ Thành Quả - xấu thậm tệ, nma hết khả năng r, k có tg á có vài tiếng th ✨</h2>
+            <h2>✨ Thành Quả - xấu vlon, nma hết khả năng r, k có tg á có vài tiếng th ✨</h2>
             <div class="image-container">
                 <img src="thanhqua.jpg" alt="Thành quả">
             </div>
