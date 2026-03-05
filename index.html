@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💗 Chúc Mừng 8/3 - Bu 💗</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ffeef8 0%, #fff0f6 100%);
+        }
+
+        /* Hoa rơi */
+        .flower {
+            position: fixed;
+            top: -10px;
+            font-size: 2em;
+            opacity: 0.7;
+            animation: fall linear infinite;
+            user-select: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Page Container */
+        .pages-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            position: relative;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .page.active {
+            opacity: 1;
+        }
+
+        /* Page 1: Chúc Mừng */
+        .page-1 {
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 25%, #ffc0cb 50%, #ff69b4 75%, #ff1493 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 5s ease infinite;
+            text-align: center;
+            color: white;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .page-1 h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            animation: popup 0.8s ease-out;
+        }
+
+        .page-1 p {
+            font-size: 1.8em;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: slideUp 1s ease-out;
+        }
+
+        .page-1 p:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .page-1 p:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes popup {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Page 2: Xin Lỗi */
+        .page-2 {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe4ef 100%);
+            padding: 40px;
+        }
+
+        .page-2 h2 {
+            font-size: 2.5em;
+            color: #d63384;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .page-2 .content {
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(214, 51, 132, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .page-2 p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Page 3: Quà */
+        .page-3 {
+            background: linear-gradient(135deg, #ffc0cb 0%, #ffe4ef 50%, #fff5f7 100%);
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .page-3 h2 {
+            font-size: 2.5em;
+            color: #d63384;
+            margin-bottom: 30px;
+            text-align: center;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .page-3 .content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(214, 51, 132, 0.2);
+        }
+
+        .gift-item {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe4ef 100%);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff69b4;
+            border-radius: 10px;
+            animation: slideRight 0.6s ease-out;
+        }
+
+        .gift-item:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .gift-item:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .gift-item:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .gift-item:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        .gift-item h3 {
+            color: #d63384;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .gift-item p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Page 5: Ảnh Thành Quả */
+        .page-6 {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe4ef 50%, #ffc0cb 100%);
+            padding: 20px;
+        }
+
+        .page-5 h2 {
+            color: #d63384;
+            margin-bottom: 20px;
+            font-size: 2em;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .page-5 .image-container {
+            width: 90%;
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(214, 51, 132, 0.3);
+            animation: zoomIn 0.8s ease-out;
+        }
+
+        .page-5 img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Page 6: Ảnh Thành Quả */
+        .page-6 {
+            background: linear-gradient(135deg, #ffb3d9 0%, #ff69b4 50%, #ff1493 100%);
+            padding: 20px;
+        }
+
+        .page-6 h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .page-6 .image-container {
+            width: 90%;
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: zoomIn 0.8s ease-out;
+        }
+
+        .page-6 img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Page 7: 2 Ảnh Bu */
+        .page-7 {
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 50%, #c71585 100%);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .page-7 .dual-images {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .page-7 .image-item {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .page-7 .image-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .page-7 img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .page-7 .goodbye {
+            text-align: center;
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: blur-in 1s ease-out;
+        }
+
+        .page-7 .goodbye-text {
+            font-size: 1.2em;
+            margin-top: 15px;
+            line-height: 1.8;
+        }
+
+        @keyframes blur-in {
+            0% {
+                opacity: 0;
+                filter: blur(5px);
+            }
+            100% {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        /* Navigation */
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #ff69b4;
+            color: #d63384;
+            padding: 12px 25px;
+            font-size: 1em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(214, 51, 132, 0.2);
+        }
+
+        button:hover {
+            background: #ff69b4;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(214, 51, 132, 0.4);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Page Indicator */
+        .page-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #d63384;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 4px 15px rgba(214, 51, 132, 0.2);
+        }
+
+        /* Decorative elements */
+        .heart {
+            position: fixed;
+            font-size: 3em;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+            user-select: none;
+        }
+
+        .heart:nth-child(odd) {
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(even) {
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-1 h1 {
+                font-size: 2.5em;
+            }
+
+            .page-1 p {
+                font-size: 1.2em;
+            }
+
+            .page-2, .page-3 {
+                padding: 20px;
+            }
+
+            .page-2 .content, .page-3 .content {
+                padding: 20px;
+            }
+
+            .page-2 h2, .page-3 h2 {
+                font-size: 1.8em;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative hearts -->
+    <div class="heart" style="left: 10%; top: 20%;">💗</div>
+    <div class="heart" style="right: 15%; top: 30%; animation-delay: 1s;">💕</div>
+    <div class="heart" style="left: 20%; bottom: 20%; animation-delay: 2s;">💖</div>
+    <div class="heart" style="right: 25%; bottom: 30%; animation-delay: 1.5s;">💝</div>
+
+    <!-- Page indicator -->
+    <div class="page-indicator">
+        <span id="current-page">1</span> / <span id="total-pages">6</span>
+    </div>
+
+    <!-- Pages -->
+    <div class="pages-container" id="pagesContainer">
+        <!-- Page 1: Chúc Mừng -->
+        <div class="page page-1 active">
+            <h1>🌸 Chúc Mừng 8/3 🌸</h1>
+            <p>✨ BU ✨</p>
+            <p>💗 Chúc em mãi xinh đẹp 💗</p>
+            <p>🌟 Gặp nhiều may mắn, kiếm được lắm tiền 🎊</p>
+        </div>
+
+        <!-- Page 2: Xin Lỗi -->
+        <div class="page page-2">
+            <h2>💔 Xin Lỗi Bu 💔</h2>
+            <div class="content">
+                <p>Xin lỗi em trong thời gian vừa qua. Tính cách anh có nhiều vấn đề, làm em không thoải mái, hay bắt em theo ý anh.</p>
+                <p>Sau này, quyết định của em dù thế nào anh cũng sẽ tôn trọng nha. Xin lỗi em lần nữa!</p>
+                <p>Cái này là thói xấu của anh, kiểu gì anh cũng phải sửa lại. Cảm ơn em vì đã ở bên anh! 💕</p>
+            </div>
+        </div>
+
+        <!-- Page 3: Quà -->
+        <div class="page page-3">
+            <h2>🎁 Giới thiệu qua mấy cái trong túi 🎁</h2>
+            <div class="content">
+                <div class="gift-item">
+                    <h3>🌹 Hoa Handmade</h3>
+                    <p>Anh biết hình thức nó không được đẹp lắm, k ý là xấu vãi nồi bé tới tay a sinh ra k phải để khéo mà là để đấm nhau =)) nên là n bị xấu á nma tấm lòng là chính mong e cảm thông cho 🥺</p>
+                </div>
+
+                <div class="gift-item">
+                    <h3>📌 Kẹp Tóc</h3>
+                    <p>Cái kẹp tóc này, em có bảo là gãy rồi thì phải. Anh đặt nó vào đó không biết em có dùng được không, nhưng thôi đại đại v! 😊</p>
+                </div>
+
+                <div class="gift-item">
+                    <h3>📌 Con chó bông</h3>
+                    <p>E hay bảo a ccho , a cũng hay bảo e ccho nên a lấy ccho vì a với e đều thích chó 😊</p>
+                </div>
+
+                <div class="gift-item">
+                    <h3>🐭 Con Capybara</h3>
+                    <p>Con này móc chìa cho đỡ mất th , e thích con nào thì lấy mà gặp lại a thì đưa a con còn lại=)) k thì ksao cầm cả đi</p>
+                </div>
+
+                <div class="gift-item">
+                    <h3>Cảm Ơn Em</h3>
+                    <p>Cảm ơn vì món quà em gửi anh hôm trước. Htrc nghịch ngu thái hoa quả trên cty vào tay r a bỏ cái hộp ấy ra , chúng nó bảo cặp a như cái túi thần kỳ =)) </p>
+                </div>
+
+                <div class="gift-item">
+                    <p> Nói chung là từ tấm lòng anh muốn xin lỗi tới em , vậy thôi</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 4: Ảnh Hỗn Đọn -->
+        <div class="page page-5">
+            <h2>🎨 Cái Mớ Hỗn Đọn Trước Video 🎨</h2>
+            <div class="image-container">
+                <img src="image/hondon.jpg" alt="Hỗn đọn">
+            </div>
+        </div>
+
+        <!-- Page 5: Ảnh Thành Quả -->
+        <div class="page page-6">
+            <h2>✨ Ảnh Thành Quả ✨</h2>
+            <div class="image-container">
+                <img src="image/thanhqua.jpg" alt="Thành quả">
+            </div>
+        </div>
+
+        <!-- Page 6: 2 Ảnh Bu & Gudbai -->
+        <div class="page page-7">
+            <div class="dual-images">
+                <div class="image-item">
+                    <img src="image/bu.jpg" alt="Bu 1">
+                </div>
+                <div class="image-item">
+                    <img src="image/bu2.jpg" alt="Bu 2">
+                </div>
+            </div>
+            <div class="goodbye">
+                <div>😘 GUDBAI 😘</div>
+                <div class="goodbye-text">
+                    Vậy nha, hết rùi 🥰<br>
+                    <span style="font-size: 0.8em;">(Tội lấy máy anh chụp trộm 📸)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button id="prevBtn" onclick="previousPage()">← Quay Lại</button>
+        <button id="nextBtn" onclick="nextPage()">Tiếp Tục →</button>
+    </div>
+
+    <script>
+        // Cấu hình
+        const totalPages = 6;
+        let currentPage = 1;
+
+        // Tạo hoa rơi
+        function createFlower() {
+            const flowers = ['🌸', '🌺', '🌼', '🌻', '🌷', '💐', '🌹', '🩷', '💗', '💕', '💖'];
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+            flower.style.left = Math.random() * 100 + '%';
+            flower.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            flower.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(flower);
+
+            setTimeout(() => {
+                flower.remove();
+            }, 8000);
+        }
+
+        // Tạo hoa rơi liên tục
+        setInterval(createFlower, 300);
+
+        // Chuyển đoạn
+        function showPage(pageNum) {
+            if (pageNum < 1 || pageNum > totalPages) return;
+
+            // Ẩn tất cả các trang
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Hiển thị trang mới
+            document.querySelectorAll('.page')[pageNum - 1].classList.add('active');
+
+            currentPage = pageNum;
+            document.getElementById('current-page').textContent = currentPage;
+
+            // Cập nhật trạng thái các nút
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+        }
+
+        // Trang tiếp theo
+        function nextPage() {
+            if (currentPage < totalPages) {
+                showPage(currentPage + 1);
+            }
+        }
+
+        // Trang trước
+        function previousPage() {
+            if (currentPage > 1) {
+                showPage(currentPage - 1);
+            }
+        }
+
+        // Phím tắt
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextPage();
+            if (e.key === 'ArrowLeft') previousPage();
+        });
+
+        // Khởi tạo
+        showPage(1);
+    </script>
+</body>
+</html>
